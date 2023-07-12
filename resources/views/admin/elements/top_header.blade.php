@@ -49,7 +49,7 @@ $user = \Illuminate\Support\Facades\Auth::user();
                                     <img src="{{asset('admin-asset')}}/images/avatars/avatar-1.png" alt="" class="rounded-circle" width="60" height="60">
                                     <div class="ms-3">
                                         <h6 class="mb-0 dropdown-user-name">{{$user->name}}</h6>
-                                        <small class="mb-0 dropdown-user-designation text-secondary">HR Manager</small>
+                                        <small class="mb-0 dropdown-user-designation text-secondary">{{$user->email}}</small>
                                     </div>
                                 </div>
                             </a>

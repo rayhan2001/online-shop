@@ -6,10 +6,18 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" href="{{asset('admin-asset')}}/images/favicon-32x32.png" type="image/png" />
+
+    <!-- Toastr -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" />
+
+
     <!--plugins-->
     <link href="{{asset('admin-asset')}}/plugins/simplebar/css/simplebar.css" rel="stylesheet" />
     <link href="{{asset('admin-asset')}}/plugins/perfect-scrollbar/css/perfect-scrollbar.css" rel="stylesheet" />
     <link href="{{asset('admin-asset')}}/plugins/vectormap/jquery-jvectormap-2.0.2.css" rel="stylesheet" />
+    <link href="{{asset('admin-asset')}}/plugins/select2/css/select2.min.css" rel="stylesheet" />
+    <link href="{{asset('admin-asset')}}/plugins/select2/css/select2-bootstrap4.css" rel="stylesheet" />
+    <link href="{{asset('admin-asset')}}/plugins/datatable/css/dataTables.bootstrap5.min.css" rel="stylesheet" />
     <!-- Bootstrap CSS -->
     <link href="{{asset('admin-asset')}}/css/bootstrap.min.css" rel="stylesheet" />
     <link href="{{asset('admin-asset')}}/css/bootstrap-extended.css" rel="stylesheet" />
@@ -58,6 +66,8 @@
 </div>
 <!--end wrapper-->
 
+<!-- Toastr -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
 
 <!-- Bootstrap bundle JS -->
 <script src="{{asset('admin-asset')}}/js/bootstrap.bundle.min.js"></script>
@@ -69,6 +79,11 @@
 <script src="{{asset('admin-asset')}}/plugins/vectormap/jquery-jvectormap-2.0.2.min.js"></script>
 <script src="{{asset('admin-asset')}}/plugins/vectormap/jquery-jvectormap-world-mill-en.js"></script>
 <script src="{{asset('admin-asset')}}/plugins/apexcharts-bundle/js/apexcharts.min.js"></script>
+<script src="{{asset('admin-asset')}}/plugins/select2/js/select2.min.js"></script>
+<script src="{{asset('admin-asset')}}/js/form-select2.js"></script>
+<script src="{{asset('admin-asset')}}/plugins/datatable/js/jquery.dataTables.min.js"></script>
+<script src="{{asset('admin-asset')}}/plugins/datatable/js/dataTables.bootstrap5.min.js"></script>
+<script src="{{asset('admin-asset')}}/js/table-datatable.js"></script>
 <!--app-->
 <script src="{{asset('admin-asset')}}/js/app.js"></script>
 <script src="{{asset('admin-asset')}}/js/index.js"></script>
