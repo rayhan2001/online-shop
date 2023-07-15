@@ -24,21 +24,27 @@
                                 @foreach($categories as $category)
                                 <tr class="text-center">
                                     <td>{{$category->category_name}}</td>
-                                    <td>{{$category->parent_cat_id}}</td>
+                                    <td>
+                                        @if($category->parent_cat_id)
+                                            {{$category->parent->category_name}}
+                                        @else
+                                        <p>No Parent Category</p>
+                                        @endif
+                                    </td>
                                     <td>{{ substr($category->slug, 0, 25) . '...' }}</td>
                                     <td>
                                         <img src="{{$category->image}}" class="img-thumbnail" alt="product img" width="50" height="50">
                                     </td>
                                     <td>
                                         @if($category->status==1)
-                                            <a href="#" class="btn-success"><i class="bi bi-check-circle"></i>Active</a>
+                                            <a href="#" class="btn btn-success statusBtn" data-id="{{ $category->id }}"><i class="bi bi-check-circle" style="margin-left: 5px; font-size: 15px;"></i>Active</a>
                                         @else
-                                            <a href="#" class="btn btn-warning"><i class="bi bi-x-circle"></i>Inactive</a>
+                                            <a href="#" class="btn btn-warning statusBtn" data-id="{{ $category->id }}"><i class="bi bi-x-circle" style="margin-left: 5px; font-size: 15px;"></i>Inactive</a>
                                         @endif
                                     </td>
                                     <td>
-                                        <a href="#" class="btn btn-primary"><i class="bi bi-pencil-square"></i></a>
-                                        <a href="#" class="btn btn-danger"><i class="bi bi-x-square"></i></a>
+                                        <a href="{{route('category.edit',$category->id)}}" class="btn btn-primary"><i class="bi bi-pencil-square" style="margin-left: 5px; font-size: 15px;"></i></a>
+                                        <a href="#" class="btn btn-danger deleteBtn" data-id="{{ $category->id }}"><i class="bi bi-x-square" style="margin-left: 5px; font-size: 15px;"></i></a>
                                     </td>
                                 </tr>
                                 @endforeach
@@ -51,3 +57,100 @@
         </div>
     </div>
 @endsection
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('.statusBtn').click(function(e) {
+                e.preventDefault();
+                var id = $(this).data('id');
+                var url = '{{ route("category-status", ":id") }}';
+                url = url.replace(':id', id);
+                Swal.fire({
+                    title: "Are you sure?",
+                    text: "You won't be change the status!",
+                    icon: 'warning',
+                    showCancelButton: true,
+                    focusConfirm: false,
+                    confirmButtonText: "Yes, change it!",
+                    cancelButtonText: "Cancel",
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        $.ajax({
+                            url: url,
+                            method: 'GET',
+                            dataType: 'JSON',
+                            data: {
+                                '_token': '{{ csrf_token() }}',
+                                'id':id,
+                            },
+                            success: function(response) {
+                                if(response.status==200){
+                                    swal.fire({
+                                        title: 'Changed!',
+                                        text: 'The status has been changed successfully.',
+                                        icon: 'success',
+                                    }).then(function() {
+                                        window.location.reload();
+                                    });
+                                }
+                            },
+                            error: function(response) {
+                                swal.fire({
+                                    title: 'Error!',
+                                    text: 'An error occurred while changed the item.',
+                                    icon: 'error',
+                                });
+                            }
+                        });
+                    }
+                });
+            })
+        })
+        $(document).ready(function() {
+            $('.deleteBtn').click(function(e) {
+                e.preventDefault();
+                var id = $(this).data('id');
+                var url = '{{ route("category.destroy", ":id") }}';
+                url = url.replace(':id', id);
+                Swal.fire({
+                    title: "Are you sure?",
+                    text: "You won't be able to revert this!",
+                    icon: 'warning',
+                    showCancelButton: true,
+                    focusConfirm: false,
+                    confirmButtonText: "Yes, delete it!",
+                    cancelButtonText: "Cancel",
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        $.ajax({
+                            url: url,
+                            type: 'DELETE',
+                            dataType: 'JSON',
+                            data: {
+                                '_token': '{{ csrf_token() }}',
+                                'id':id,
+                            },
+                            success: function(response) {
+                                if(response.status==200){
+                                    swal.fire({
+                                        title: 'Deleted!',
+                                        text: 'The item has been deleted successfully.',
+                                        icon: 'success',
+                                    }).then(function() {
+                                        window.location.reload();
+                                    });
+                                }
+                            },
+                            error: function(response) {
+                                swal.fire({
+                                    title: 'Error!',
+                                    text: 'An error occurred while deleting the item.',
+                                    icon: 'error',
+                                });
+                            }
+                        });
+                    }
+                });
+            });
+        });
+    </script>

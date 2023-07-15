@@ -9,6 +9,8 @@
 
     <!-- Toastr -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" />
+    <!-- Sweetalert -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@10.16.6/dist/sweetalert2.min.css">
 
 
     <!--plugins-->
@@ -35,6 +37,7 @@
     <link href="{{asset('admin-asset')}}/css/light-theme.css" rel="stylesheet" />
     <link href="{{asset('admin-asset')}}/css/semi-dark.css" rel="stylesheet" />
     <link href="{{asset('admin-asset')}}/css/header-colors.css" rel="stylesheet" />
+
 
     <title>@yield('title')</title>
 </head>
@@ -68,6 +71,8 @@
 
 <!-- Toastr -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+<!-- Sweetalert -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10.16.6/dist/sweetalert2.min.js"></script>
 
 <!-- Bootstrap bundle JS -->
 <script src="{{asset('admin-asset')}}/js/bootstrap.bundle.min.js"></script>

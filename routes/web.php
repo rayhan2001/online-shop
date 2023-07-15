@@ -25,4 +25,5 @@ Route::middleware([
     Route::get('/dashboard',[DashboardController::class,'index'])->name('dashboard');
 
     Route::resource('category',CategoryController::class);
+    Route::get('/category-status{id}',[CategoryController::class,'status'])->name('category-status');
 });
