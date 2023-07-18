@@ -67,8 +67,8 @@
                             <h5 class="mb-0">Brands</h5>
                         </div>
                     </div>
-                    <a href="app-emailbox.html" class="list-group-item"><i class="bi bi-envelope"></i>Email</a>
-                    <a href="app-chat-box.html" class="list-group-item"><i class="bi bi-chat-left-text"></i>Chat Box</a>
+                    <a href="{{route('brand.create')}}" class="list-group-item"><i class="bi bi-plus-square"></i>Add Brand</a>
+                    <a href="{{route('brand.index')}}" class="list-group-item"><i class="bi bi-card-list"></i>All Brand</a>
                 </div>
             </div>
             <div class="tab-pane fade" id="pills-products">

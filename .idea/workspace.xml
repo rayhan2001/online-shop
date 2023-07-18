@@ -20,24 +20,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9f3da415-099f-436c-9e30-d648504024e9" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/online-shop.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/phpunit.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/js/custom.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/CategoryController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/CategoryController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Category.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Category.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/upload/category/927323412.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/category/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/category/create.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/category/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/category/index.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/brands/create.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/brands/edit.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/brands/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/elements/left_sidebar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/elements/left_sidebar.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/layouts/admin_app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/admin_app.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_classmap.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_classmap.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_static.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_static.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -230,7 +221,9 @@
       <workItem from="1689088680450" duration="60000" />
       <workItem from="1689181739622" duration="10773000" />
       <workItem from="1689345824779" duration="3421000" />
-      <workItem from="1689431601083" duration="8939000" />
+      <workItem from="1689431601083" duration="9163000" />
+      <workItem from="1689487066105" duration="45000" />
+      <workItem from="1689692895025" duration="2624000" />
     </task>
     <servers />
   </component>
@@ -247,20 +240,25 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
     <state x="532" y="42" key="#EditorConfig" timestamp="1688838384322">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="532" y="42" key="#EditorConfig/0.0.1536.834@0.0.1536.834" timestamp="1688838384322" />
-    <state x="496" y="97" key="FileChooserDialogImpl" timestamp="1689088727543">
+    <state x="433" y="113" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1689695513299">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state x="496" y="97" key="FileChooserDialogImpl/0.0.1536.834@0.0.1536.834" timestamp="1689088727543" />
-    <state x="578" y="226" key="NewPhpFileDialog" timestamp="1689443406714">
+    <state x="433" y="113" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1536.834@0.0.1536.834" timestamp="1689695513299" />
+    <state x="496" y="97" key="FileChooserDialogImpl" timestamp="1689487106341">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state x="578" y="226" key="NewPhpFileDialog/0.0.1536.834@0.0.1536.834" timestamp="1689443406714" />
+    <state x="496" y="97" key="FileChooserDialogImpl/0.0.1536.834@0.0.1536.834" timestamp="1689487106341" />
+    <state x="578" y="226" key="NewPhpFileDialog" timestamp="1689693552650">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="578" y="226" key="NewPhpFileDialog/0.0.1536.834@0.0.1536.834" timestamp="1689693552650" />
     <state x="160" y="0" key="SettingsEditor" timestamp="1689185292563">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
