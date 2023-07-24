@@ -78,8 +78,8 @@
                             <h5 class="mb-0">Products</h5>
                         </div>
                     </div>
-                    <a href="app-emailbox.html" class="list-group-item"><i class="bi bi-envelope"></i>Email</a>
-                    <a href="app-chat-box.html" class="list-group-item"><i class="bi bi-chat-left-text"></i>Chat Box</a>
+                    <a href="{{route('product.create')}}" class="list-group-item"><i class="bi bi-plus-square"></i>Add Product</a>
+                    <a href="{{route('product.index')}}" class="list-group-item"><i class="bi bi-card-list"></i>All Product</a>
                 </div>
             </div>
             <div class="tab-pane fade" id="pills-shipping">

@@ -20,10 +20,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9f3da415-099f-436c-9e30-d648504024e9" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/resources/views/admin/brands/create.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/admin/brands/edit.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/admin/brands/index.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/products/create.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/products/edit.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/products/index.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Category.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Category.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/category/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/category/edit.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/admin/elements/left_sidebar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/elements/left_sidebar.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/layouts/admin_app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/admin_app.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
@@ -179,19 +181,20 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/frontend" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/admin/products" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="E:\xampp\htdocs\online-shop\resources\views\frontend" />
-      <recent name="E:\xampp\htdocs\online-shop\public\frontend-asset" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="E:\xampp\htdocs\online-shop\resources\views\admin\login" />
       <recent name="E:\xampp\htdocs\online-shop\resources\views\frontend\pages" />
       <recent name="E:\xampp\htdocs\online-shop\resources\views\frontend" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\xampp\htdocs\online-shop\resources\views\admin\products" />
+      <recent name="E:\xampp\htdocs\online-shop\resources\views\frontend" />
+      <recent name="E:\xampp\htdocs\online-shop\public\frontend-asset" />
     </key>
   </component>
   <component name="RunManager">
@@ -223,7 +226,11 @@
       <workItem from="1689345824779" duration="3421000" />
       <workItem from="1689431601083" duration="9163000" />
       <workItem from="1689487066105" duration="45000" />
-      <workItem from="1689692895025" duration="2624000" />
+      <workItem from="1689692895025" duration="7837000" />
+      <workItem from="1689776966530" duration="7577000" />
+      <workItem from="1689952927961" duration="5924000" />
+      <workItem from="1690035099134" duration="4923000" />
+      <workItem from="1690208245106" duration="8140000" />
     </task>
     <servers />
   </component>
@@ -255,18 +262,18 @@
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="496" y="97" key="FileChooserDialogImpl/0.0.1536.834@0.0.1536.834" timestamp="1689487106341" />
-    <state x="578" y="226" key="NewPhpFileDialog" timestamp="1689693552650">
+    <state x="578" y="226" key="NewPhpFileDialog" timestamp="1689701697516">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state x="578" y="226" key="NewPhpFileDialog/0.0.1536.834@0.0.1536.834" timestamp="1689693552650" />
+    <state x="578" y="226" key="NewPhpFileDialog/0.0.1536.834@0.0.1536.834" timestamp="1689701697516" />
     <state x="160" y="0" key="SettingsEditor" timestamp="1689185292563">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="160" y="0" key="SettingsEditor/0.0.1536.834@0.0.1536.834" timestamp="1689185292563" />
-    <state x="347" y="-1" width="840" height="1034" key="search.everywhere.popup" timestamp="1689352545731">
+    <state x="347" y="0" width="840" height="832" key="search.everywhere.popup" timestamp="1690219461360">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state x="347" y="-1" width="840" height="1034" key="search.everywhere.popup/0.0.1536.834@0.0.1536.834" timestamp="1689352545731" />
+    <state x="347" y="0" width="840" height="832" key="search.everywhere.popup/0.0.1536.834@0.0.1536.834" timestamp="1690219461360" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
