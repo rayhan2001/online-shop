@@ -20,6 +20,11 @@
     <link href="{{asset('admin-asset')}}/plugins/select2/css/select2.min.css" rel="stylesheet" />
     <link href="{{asset('admin-asset')}}/plugins/select2/css/select2-bootstrap4.css" rel="stylesheet" />
     <link href="{{asset('admin-asset')}}/plugins/datatable/css/dataTables.bootstrap5.min.css" rel="stylesheet" />
+    <!--upload file-->
+    <link href="{{asset('admin-asset')}}/plugins/simplebar/css/simplebar.css" rel="stylesheet" />
+    <link href="{{asset('admin-asset')}}/plugins/fancy-file-uploader/fancy_fileupload.css" rel="stylesheet" />
+    <link href="{{asset('admin-asset')}}/plugins/Drag-And-Drop/dist/imageuploadify.min.css" rel="stylesheet" />
+    <link href="{{asset('admin-asset')}}/plugins/perfect-scrollbar/css/perfect-scrollbar.css" rel="stylesheet" />
     <!-- Bootstrap CSS -->
     <link href="{{asset('admin-asset')}}/css/bootstrap.min.css" rel="stylesheet" />
     <link href="{{asset('admin-asset')}}/css/bootstrap-extended.css" rel="stylesheet" />
@@ -89,6 +94,13 @@
 <script src="{{asset('admin-asset')}}/plugins/datatable/js/jquery.dataTables.min.js"></script>
 <script src="{{asset('admin-asset')}}/plugins/datatable/js/dataTables.bootstrap5.min.js"></script>
 <script src="{{asset('admin-asset')}}/js/table-datatable.js"></script>
+<!--app-->
+<script src="{{asset('admin-asset')}}/plugins/fancy-file-uploader/jquery.ui.widget.js"></script>
+<script src="{{asset('admin-asset')}}/plugins/fancy-file-uploader/jquery.fileupload.js"></script>
+<script src="{{asset('admin-asset')}}/plugins/fancy-file-uploader/jquery.iframe-transport.js"></script>
+<script src="{{asset('admin-asset')}}/plugins/fancy-file-uploader/jquery.fancy-fileupload.js"></script>
+<script src="{{asset('admin-asset')}}/plugins/Drag-And-Drop/dist/imageuploadify.min.js"></script>
+<script src="{{asset('admin-asset')}}/js/form-file-upload.js"></script>
 <!--app-->
 <script src="{{asset('admin-asset')}}/js/app.js"></script>
 <script src="{{asset('admin-asset')}}/js/index.js"></script>

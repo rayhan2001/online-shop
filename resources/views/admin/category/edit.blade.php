@@ -84,91 +84,51 @@
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
     $(document).ready(function() {
-        {{--$('#updateBtn').click(function (e) {--}}
-        {{--    e.preventDefault();--}}
-        {{--    $('#updateBtn').attr("disabled", true);--}}
-        {{--    $('#updateBtn').html('<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> Processing...');--}}
+        $('#edit-category').submit(function(e) {
+            e.preventDefault();
+            $('#updateBtn').attr("disabled", true);
+            $('#updateBtn').html('<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> Processing...');
+            var url = $(this).data('url');
+            var formData = new FormData(this);
 
-        {{--    var data = new FormData();--}}
-        {{--    data.append('_token', "{{ csrf_token() }}");--}}
-        {{--    data.append('category_name', document.getElementById("category_name").value);--}}
-        {{--    data.append('parent_cat_id', document.getElementById("parent_cat_id").value);--}}
-        {{--    data.append('slug', document.getElementById("slug").value);--}}
-        {{--    data.append('image', $('input[type=file]')[0].files[0]);--}}
-        {{--    data.append('id', document.getElementById("cat_id").value);--}}
-
-        {{--    $.ajaxSetup({--}}
-        {{--        headers: {--}}
-        {{--            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')--}}
-        {{--        }--}}
-        {{--    });--}}
-        {{--    $.ajax({--}}
-        {{--        method: "PUT",--}}
-        {{--        url: "{{route('category.update',$category->id)}}",--}}
-        {{--        data: data,--}}
-        {{--        dataType: "json",--}}
-        {{--        processData: false,--}}
-        {{--        contentType: false,--}}
-        {{--        success: function (response) {--}}
-        {{--            $('#edit-category').trigger("reset");--}}
-        {{--            toastr.success('Category Update Successfully');--}}
-        {{--            window.location.reload();--}}
-        {{--            $('#updateBtn').attr("disabled", false);--}}
-        {{--            $('#updateBtn').html("Update");--}}
-        {{--        },--}}
-        {{--        error: function(error) {--}}
-        {{--            $('#updateBtn').attr("disabled", false);--}}
-        {{--            $('#updateBtn').html("Update");--}}
-        {{--        }--}}
-        {{--    });--}}
-        {{--});--}}
-        $(document).ready(function() {
-            $('#edit-category').submit(function(e) {
-                e.preventDefault();
-                $('#updateBtn').attr("disabled", true);
-                $('#updateBtn').html('<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> Processing...');
-                var url = $(this).data('url');
-                var formData = new FormData(this);
-
-                $.ajax({
-                    type: 'POST',
-                    url: url,
-                    data: formData,
-                    processData: false,
-                    contentType: false,
-                    success: function(response) {
-                        if (response.status==200){
-                            toastr.success('Category updated successfully.');
-                            $(location).prop('href', '{{route('category.index')}}');
-                            $('#updateBtn').attr("disabled", false);
-                            $('#updateBtn').html("Update");
-                        }
-                    },
-                    error: function(error) {
+            $.ajax({
+                type: 'POST',
+                url: url,
+                data: formData,
+                processData: false,
+                contentType: false,
+                success: function(response) {
+                    if (response.status==200){
+                        toastr.success('Category updated successfully.');
+                        $(location).prop('href', '{{route('category.index')}}');
                         $('#updateBtn').attr("disabled", false);
                         $('#updateBtn').html("Update");
                     }
-                });
-
-                // Update the image URL
-                var fileInput = document.getElementById('image');
-                var file = fileInput.files[0];
-                if (file) {
-                    var reader = new FileReader();
-                    reader.onload = function(event) {
-                        $('#categoryImage').attr('src', event.target.result);
-                    };
-                    reader.readAsDataURL(file);
+                },
+                error: function(error) {
+                    $('#updateBtn').attr("disabled", false);
+                    $('#updateBtn').html("Update");
                 }
             });
-        });
-        document.getElementById('image').addEventListener('change', function(e) {
-            var file = e.target.files[0];
-            var reader = new FileReader();
-            reader.onload = function(e) {
-                document.getElementById('categoryImage').src = e.target.result;
+
+            // Update the image URL
+            var fileInput = document.getElementById('image');
+            var file = fileInput.files[0];
+            if (file) {
+                var reader = new FileReader();
+                reader.onload = function(event) {
+                    $('#categoryImage').attr('src', event.target.result);
+                };
+                reader.readAsDataURL(file);
             }
-            reader.readAsDataURL(file);
         });
+    });
+    document.getElementById('image').addEventListener('change', function(e) {
+        var file = e.target.files[0];
+        var reader = new FileReader();
+        reader.onload = function(e) {
+            document.getElementById('categoryImage').src = e.target.result;
+        }
+        reader.readAsDataURL(file);
     });
 </script>
