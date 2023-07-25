@@ -23,7 +23,6 @@
 
 <!--start wrapper-->
 <div class="wrapper">
-
     <!--start content-->
     <main class="authentication-content">
         <div class="container-fluid">
@@ -35,8 +34,7 @@
                         </div>
                         <div class="col-lg-6">
                             <div class="card-body p-4 p-sm-5">
-                                <h5 class="card-title">Sign In</h5>
-                                <p class="card-text mb-5">See your growth and get consulting support!</p>
+                                <h5 class="card-title text-center">Sign In</h5>
                                 <form class="form-body" method="POST" action="{{ route('login') }}">
                                     @csrf
                                     <div class="row g-3">
@@ -44,7 +42,7 @@
                                             <label for="inputEmailAddress" class="form-label">Email Address</label>
                                             <div class="ms-auto position-relative">
                                                 <div class="position-absolute top-50 translate-middle-y search-icon px-3"><i class="bi bi-envelope-fill"></i></div>
-                                                <input type="email" name="email" class="form-control radius-30 ps-5" id="inputEmailAddress" placeholder="Email Address" required>
+                                                <input type="email" name="email" value="{{old('email')}}" class="form-control radius-30 ps-5" id="inputEmailAddress" placeholder="Email Address" required>
                                             </div>
                                         </div>
                                         <div class="col-12">
@@ -76,6 +74,17 @@
                                     </div>
                                 </form>
                             </div>
+                            @if ($errors->any())
+                                <div class="col-lg-10 mx-auto">
+                                    <div class="card timeOut radius-30 shadow-lg">
+                                        <ul class="mt-3">
+                                            @foreach ($errors->all() as $error)
+                                                <span class="text-danger">{{ $error }}</span><br>
+                                            @endforeach
+                                        </ul>
+                                    </div>
+                                </div>
+                            @endif
                         </div>
                     </div>
                 </div>
@@ -92,7 +101,13 @@
 <!--plugins-->
 <script src="{{asset('admin-asset')}}/js/jquery.min.js"></script>
 <script src="{{asset('admin-asset')}}/js/pace.min.js"></script>
-
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        setTimeout(function() {
+            document.querySelector('.timeOut').style.display = 'none';
+        }, 10000);
+    });
+</script>
 
 </body>
 </html>
