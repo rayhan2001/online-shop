@@ -123,7 +123,6 @@ class CategoryController extends Controller
      */
     public function destroy($id)
     {
-
         $category = Category::find($id);
         if ($category->image){
             unlink($category->image);
