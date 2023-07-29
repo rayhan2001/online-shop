@@ -6,6 +6,7 @@ use App\Models\Brand;
 use App\Models\Category;
 use App\Models\Product;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
 
 class ProductController extends Controller
@@ -46,7 +47,6 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-//        dd($request->all());
         $validator = $request->validate([
             'title' => 'required',
             'slug' => 'required',
@@ -81,7 +81,6 @@ class ProductController extends Controller
         $product->track_quantity = $request->track_quantity;
         $product->price = $request->price;
         $product->compare_price = $request->compare_price;
-//        $product->image = $request->$this->saveImage(Request, $request);
         $product->description = $request->description;
         $product->status = $request->status;
         $images = array();
@@ -122,7 +121,10 @@ class ProductController extends Controller
      */
     public function edit($id)
     {
-        //
+        $categories = Category::whereNull('parent_cat_id')->get();
+        $brands = Brand::where('status',1)->get();
+        $product = Product::find($id);
+        return view('admin.products.edit',compact('categories','brands','product'));
     }
 
     /**
@@ -145,6 +147,29 @@ class ProductController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $product = Product::find($id);
+        $images = explode('|',$product->image);
+        foreach ($images as $image){
+            if (!empty($image)){
+                unlink($image);
+            }
+        }
+        $product->delete();
+
+        return  response()->json(['status'=>200]);
+    }
+    public function status($id){
+        $product = Product::find($id);
+        if ($product->status == 1) {
+            $product->status = 0;
+        } else {
+            $product->status = 1;
+        }
+        $product->save();
+
+        return response()->json([
+            'success'=>200,
+            'status'=>$product->status,
+        ]);
     }
 }

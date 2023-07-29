@@ -21,9 +21,21 @@
   <component name="ChangeListManager">
     <list default="true" id="9f3da415-099f-436c-9e30-d648504024e9" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/CategoryController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/CategoryController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ProductController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ProductController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/login/login.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/login/login.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Product.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Product.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/upload/category/1588696945.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/upload/product_image/689016f6ee80ef507e2f5d67614b4be8.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/upload/product_image/6c1e55ec7c43dc51a37472ddcbd756fb.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/upload/product_image/7059b7dea43da04fd342088d7c1698f0.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/upload/product_image/aa6b7ad9d68bf3443c35d23de844463b.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/upload/product_image/cb7c403aa312160380010ee3dd4bfc53.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/upload/product_image/cd19a3a0867f69f400961b5dd502fbc6.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/brands/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/brands/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/category/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/category/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/products/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/products/edit.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/admin/products/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/products/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -224,7 +236,9 @@
       <workItem from="1689952927961" duration="5924000" />
       <workItem from="1690035099134" duration="4923000" />
       <workItem from="1690208245106" duration="8790000" />
-      <workItem from="1690294745093" duration="10431000" />
+      <workItem from="1690294745093" duration="11119000" />
+      <workItem from="1690611806562" duration="7493000" />
+      <workItem from="1690650301525" duration="6442000" />
     </task>
     <servers />
   </component>
@@ -264,10 +278,11 @@
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="160" y="0" key="SettingsEditor/0.0.1536.834@0.0.1536.834" timestamp="1690296951912" />
-    <state x="347" y="0" width="840" height="832" key="search.everywhere.popup" timestamp="1690295980551">
+    <state x="347" y="0" width="840" height="832" key="search.everywhere.popup" timestamp="1690646935499">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state x="347" y="0" width="840" height="832" key="search.everywhere.popup/0.0.1536.834@0.0.1536.834" timestamp="1690295980551" />
+    <state x="347" y="0" width="840" height="832" key="search.everywhere.popup/0.0.1536.834/1920.0.1366.738@0.0.1536.834" timestamp="1690646935499" />
+    <state x="347" y="0" width="840" height="832" key="search.everywhere.popup/0.0.1536.834@0.0.1536.834" timestamp="1690644882565" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

@@ -136,8 +136,8 @@
                                         title: 'Deleted!',
                                         text: 'The item has been deleted successfully.',
                                         icon: 'success',
-                                    }).then(function() {
-                                        window.location.reload();
+                                    }).then(function () {
+                                        $(`.deleteBtn[data-id="${id}"]`).closest('tr').remove();
                                     });
                                 }
                             },

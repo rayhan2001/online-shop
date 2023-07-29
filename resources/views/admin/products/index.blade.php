@@ -28,8 +28,8 @@
                                     @endphp
                                     <tr class="text-center">
                                         <td>{{$product->title}}</td>
-                                        <td>{{$product->cat_id}}</td>
-                                        <td>{{$product->brand_id}}</td>
+                                        <td>{{$product->category->category_name}}</td>
+                                        <td>{{$product->brand->brand_name}}</td>
                                         <td>
                                             @foreach($images as $image)
                                                 @if($image)
@@ -42,14 +42,14 @@
                                         <td>{{$product->price}}	&#2547;</td>
                                         <td>
                                             @if($product->status==1)
-                                                <a href="#" class="btn btn-success statusBtn" data-id="{{ $product->id }}"><i class="bi bi-check-circle" style="margin-left: 5px; font-size: 15px;"></i>Active</a>
+                                                <a href="#" class="btn btn-success statusBtn" data-id="{{ $product->id }}">Active</a>
                                             @else
-                                                <a href="#" class="btn btn-warning statusBtn" data-id="{{ $product->id }}"><i class="bi bi-x-circle" style="margin-left: 5px; font-size: 15px;"></i>Inactive</a>
+                                                <a href="#" class="btn btn-warning statusBtn" data-id="{{ $product->id }}">Inactive</a>
                                             @endif
                                         </td>
                                         <td>
                                             <a href="{{route('product.edit',$product->id)}}" class="btn btn-primary"><i class="bi bi-pencil-square" style="margin-left: 5px; font-size: 15px;"></i></a>
-                                            <a href="#" class="btn btn-danger deleteBtn" data-id="{{ $product->id }}"><i class="bi bi-x-square" style="margin-left: 5px; font-size: 15px;"></i></a>
+                                            <a href="#" class="btn btn-danger productDelete" data-id="{{ $product->id }}"><i class="bi bi-x-square" style="margin-left: 5px; font-size: 15px;"></i></a>
                                         </td>
                                     </tr>
                                 @endforeach
@@ -68,7 +68,7 @@
         $('.statusBtn').click(function(e) {
             e.preventDefault();
             var id = $(this).data('id');
-            {{--var url = '{{ route("category-status", ":id") }}';--}}
+            var url = '{{ route("product-status", ":id") }}';
             url = url.replace(':id', id);
             Swal.fire({
                 title: "Are you sure?",
@@ -89,13 +89,19 @@
                             'id':id,
                         },
                         success: function(response) {
-                            if(response.status==200){
+                            if (response.success == 200) {
+                                var statusText = response.status === 1 ? 'Active' : 'Inactive';
+                                $('.statusBtn[data-id="' + id + '"]').text(statusText);
+
+                                if (response.status === 1) {
+                                    $('.statusBtn[data-id="' + id + '"]').removeClass('btn-warning').addClass('btn-success');
+                                } else {
+                                    $('.statusBtn[data-id="' + id + '"]').removeClass('btn-success').addClass('btn-warning');
+                                }
                                 swal.fire({
                                     title: 'Changed!',
                                     text: 'The status has been changed successfully.',
                                     icon: 'success',
-                                }).then(function() {
-                                    window.location.reload();
                                 });
                             }
                         },
@@ -112,10 +118,10 @@
         })
     })
     $(document).ready(function() {
-        $('.deleteBtn').click(function(e) {
+        $('.productDelete').click(function(e) {
             e.preventDefault();
             var id = $(this).data('id');
-            {{--var url = '{{ route("category.destroy", ":id") }}';--}}
+            var url = '{{ route("product.destroy", ":id") }}';
             url = url.replace(':id', id);
             Swal.fire({
                 title: "Are you sure?",
@@ -141,8 +147,8 @@
                                     title: 'Deleted!',
                                     text: 'The item has been deleted successfully.',
                                     icon: 'success',
-                                }).then(function() {
-                                    window.location.reload();
+                                }).then(function () {
+                                    $(`.productDelete[data-id="${id}"]`).closest('tr').remove();
                                 });
                             }
                         },

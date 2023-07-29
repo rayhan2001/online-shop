@@ -34,4 +34,5 @@ Route::middleware([
 
     Route::resource('product',ProductController::class);
     Route::get('/products/get-sub-category/{cat_id}', [ProductController::class, 'getSubCategory']);
+    Route::get('/product-status{id}',[ProductController::class,'status'])->name('product-status');
 });
